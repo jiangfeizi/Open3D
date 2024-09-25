@@ -21,6 +21,9 @@ jobs:
       contents: write  # upload
     runs-on: windows-2019
     steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+        
       - name: Update devel release with package
         env:
           GH_TOKEN: ${{ github.token }}
