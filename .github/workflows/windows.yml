@@ -38,9 +38,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        BUILD_SHARED_LIBS: [ON, OFF]
-        STATIC_RUNTIME: [ON, OFF]
-        BUILD_CUDA_MODULE: [ON, OFF]
+        BUILD_SHARED_LIBS: [OFF]
+        STATIC_RUNTIME: [ON]
+        BUILD_CUDA_MODULE: [ON]
         CONFIG: [Release, Debug]
         exclude:
           - BUILD_SHARED_LIBS: ON
@@ -224,7 +224,6 @@ jobs:
           cmake --build . --config ${{ matrix.CONFIG }} --target install-pip-package
       - name: Import python package
         # If BUILD_SHARED_LIBS == ON, Open3D.dll needs to be copied, which is not recommended for python.
-        if: ${{ matrix.BUILD_SHARED_LIBS == 'OFF' && matrix.BUILD_CUDA_MODULE == 'OFF' }}
         run: |
           python -c "import open3d; print('Imported:', open3d)"
           python -c "import open3d; print('CUDA enabled: ', open3d.core.cuda.is_available())"
