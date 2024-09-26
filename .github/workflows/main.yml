@@ -29,6 +29,5 @@ jobs:
           GH_TOKEN: "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"
         run: |
           echo aaaaaaaaaaaaa
-          echo $GH_TOKEN$
           touch CMakeLists.txt
-          gh release upload v1.0 CMakeLists.txt
+          gh release upload v1.0.0 CMakeLists.txt
