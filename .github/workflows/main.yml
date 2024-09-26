@@ -26,9 +26,9 @@ jobs:
         
       - name: Update devel release with package
         env:
-          GH_TOKEN: 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
+          GH_TOKEN: "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"
         run: |
           echo aaaaaaaaaaaaa
-          echo $GH_TOKEN
+          echo $GH_TOKEN$
           touch CMakeLists.txt
           gh release upload v1.0 CMakeLists.txt
