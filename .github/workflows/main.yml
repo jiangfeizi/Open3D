@@ -28,6 +28,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          echo aaaaaaaaaaaaa
           echo $GH_TOKEN
           touch CMakeLists.txt
-          gh release upload main-devel CMakeLists.txt
+          gh release upload -h
