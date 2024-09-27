@@ -70,9 +70,9 @@ jobs:
           $CUDA_VER_ID = "$($CUDA_VER_ARR[0])_$($CUDA_VER_ARR[1])"
           # Installer url
           if ( $CUDA_VER_ARR[0] -ge 11 ) {
-            $CUDA_URL = "http://developer.download.nvidia.com/compute/cuda/$CUDA_VER_FULL/network_installers/cuda_$($CUDA_VER_FULL)_win10_network.exe"
+            $CUDA_URL = "https://developer.download.nvidia.com/compute/cuda/11.8.0/network_installers/cuda_11.8.0_windows_network.exe"
           } else {
-            $CUDA_URL = "http://developer.download.nvidia.com/compute/cuda/$CUDA_VER/Prod/network_installers/cuda_$($CUDA_VER_FULL)_win10_network.exe"
+            $CUDA_URL = "https://developer.download.nvidia.com/compute/cuda/11.8.0/network_installers/cuda_11.8.0_windows_network.exe"
           }
           # Installer arguments
           $CUDA_INSTALL_ARGS = "-s"
